@@ -301,6 +301,9 @@ public class XML {
      * @return A simple JSON value.
      */
     public static Object stringToValue(String string) {
+        if (string.equals("0")) {
+            return new Integer(0);
+        }
         if (string.equals("")) {
             return string;
         }
