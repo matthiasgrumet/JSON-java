@@ -301,20 +301,20 @@ public class XML {
      * @return A simple JSON value.
      */
     public static Object stringToValue(String string) {
-        if (string.equals("0")) {
-            return new Integer(0);
-        }
-        if (string.equals("")) {
+        if ("".equals(string)) {
             return string;
         }
-        if (string.equalsIgnoreCase("true")) {
+        if ("true".equalsIgnoreCase(string)) {
             return Boolean.TRUE;
         }
-        if (string.equalsIgnoreCase("false")) {
+        if ("false".equalsIgnoreCase(string)) {
             return Boolean.FALSE;
         }
-        if (string.equalsIgnoreCase("null")) {
+        if ("null".equalsIgnoreCase(string)) {
             return JSONObject.NULL;
+        }
+        if ("0".equals(string)) {
+            return new Integer(0);
         }
 
 // If it might be a number, try converting it. If that doesn't work, 
